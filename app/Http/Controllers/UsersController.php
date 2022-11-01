@@ -108,7 +108,7 @@ public function editUser(Request $request){
                 ]);
                             //Print_r($edituser);die();
 
-                return redirect()->back(); 
+                return redirect('/users')->with('success', 'Users Updated Successfully'); 
             }
 /******   Edit Users End ******/
 

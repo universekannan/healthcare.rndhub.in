@@ -112,7 +112,7 @@ class PermissionsController extends BaseController
                 'appointments'              => $appointments,
                 'mis'                       => $mis,
 		]);
-                return redirect()->back();
+                return redirect('/users/permissions')->with('success', 'Permission Updated Successfully');
         }
 
 public function roles(Request $request){
@@ -122,6 +122,6 @@ public function roles(Request $request){
                 'status'                =>   1,
                 ]);
                                   
-            return redirect()->back(); 
+            return redirect('/users/permissions')->with('success', 'Role Added Successfully'); 
         }
 }

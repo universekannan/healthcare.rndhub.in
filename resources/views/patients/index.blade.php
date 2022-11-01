@@ -76,6 +76,12 @@
          </div>
 
          <div class="card-body">
+             @if(session()->has('success'))
+            <div class="alert alert-success alert-dismissable">
+                <a href="#" style="color:white !important" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong> {{ session('success') }} </strong>
+            </div>
+        @endif
             <div class="tab-content" id="custom-tabs-four-tabContent">
                <div class="tab-pane fade show active" id="custom-tabs-four-home" role="tabpanel" aria-labelledby="custom-tabs-four-home-tab">
                   <table id="example2" class="table table-bordered table-hover">

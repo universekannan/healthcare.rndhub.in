@@ -93,7 +93,7 @@ class PatientsController extends BaseController
                 'created_at'         =>   date('Y-m-d H:i:s'),
                 ]);
 
-            return redirect()->back(); 
+            return redirect('/patients')->with('success', 'Patient Added Successfully'); 
         }
 
         public function editPatient(Request $request){
@@ -123,7 +123,7 @@ class PatientsController extends BaseController
                 'updated_at'         =>   date('Y-m-d H:i:s'),
                 ]);
 
-            return redirect()->back(); 
+            return redirect('/patients')->with('success', 'Patient Updated Successfully'); 
         }
 
 /******   Edit Users End ******/

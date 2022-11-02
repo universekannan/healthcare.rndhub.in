@@ -49,7 +49,7 @@
 <script src="{!! asset('plugins/ekko-lightbox/ekko-lightbox.min.js') !!}"></script>
 <!-- Select2 -->
 <script src="{!! asset('plugins/select2/js/select2.full.min.js') !!}"></script>
-
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
 
 <script>
   $(document).on('click', '[data-toggle="lightbox"]', function(event) {
@@ -128,6 +128,7 @@ function myFunction() {
         format: 'YYYY-MM-DD'
       },
     })
+
 
 </script>
 
@@ -4032,6 +4033,50 @@ function education_fields() {
             });
 </script>
 
+  <script>
+  $('#block').on('change', function () {
+                var idroom = this.value;
+                $("#room").html('');
+                $.ajax({
+                    url: "{{url('/getroom')}}",
+                    type: "POST",
+                    data: {
+                        room_id: idroom,
+                        _token: '{{csrf_token()}}'
+                    },
+                    dataType: 'json',
+                    success: function (result) {
+                        $('#room').html('<option value="">-- Select Room --</option>');
+                        $.each(result, function (key, value) {
+                            $("#room").append('<option value="' + value
+                                .id + '">' + value.room_name + '</option>');
+                        });
+                        $('#bed').html('<option value="">-- Select Bed --</option>');
+                    }   
+                });
+            });
+  $('#room').on('change', function () {
+                var idbed= this.value;
+                $("#bed").html('');
+                $.ajax({
+                    url: "{{url('/getbed')}}",
+                    type: "POST",
+                    data: {
+                        bed_id: idbed,
+                        _token: '{{csrf_token()}}'
+                    },
+                    dataType: 'json',
+                    success: function (result) {
+                        $('#bed').html('<option value="">-- Select Bed --</option>');
+                        $.each(result, function (key, value) {
+                            $("#bed").append('<option value="' + value
+                                .id + '">' + value.bed_number + '</option>');
+                        });
+                    }   
+                });
+            });
+</script>
+
 <script>
 function duplicateEmail(id){
     var email = $("#email").val();
@@ -4059,4 +4104,43 @@ function duplicateEmail(id){
    $(".alert-success").fadeTo(3000, 1000).slideUp(1000, function(){
             $(".alert-success").slideUp(1000);
         });
+</script>
+
+<script>  
+   function ageCalculator() {  
+       var userinput = document.getElementById("DOB").value;  
+       var dob = new Date(userinput);  
+       if(userinput==null || userinput=='') {  
+         document.getElementById("message").innerHTML = "**Choose a date please!";    
+         return false;   
+       } else {  
+         
+       //calculate month difference from current date in time  
+       var month_diff = Date.now() - dob.getTime();  
+         
+       //convert the calculated difference in date format  
+       var age_dt = new Date(month_diff);   
+         
+       //extract year from date      
+       var year = age_dt.getUTCFullYear();  
+         
+       //now calculate the age of the user  
+       var age = Math.abs(year - 1970);  
+         
+       //display the calculated age  
+       return document.getElementById("result").innerHTML =    
+                "" + age + "";  
+       }  
+   }  
+</script>  
+<script>
+   function submitBday() {
+    var Q4A = "";
+    var Bdate = document.getElementById('bday').value;
+    var Bday = +new Date(Bdate);
+    Q4A += + ~~ ((Date.now() - Bday) / (31557600000));
+    var theBday = document.getElementById('resultBday');
+    theBday.innerHTML = Q4A;
+}
+   
 </script>

@@ -48,11 +48,14 @@ Route::group(['middleware' => ['auth']], function() {
     Route::post('/addroles', 'App\Http\Controllers\PermissionsController@addRoles');
 
     Route::get('/patients', 'App\Http\Controllers\PatientsController@managePatients'); 
+    Route::get('/doctorpatient', 'App\Http\Controllers\PatientsController@doctorPatients'); 
     Route::post('/add_patient', 'App\Http\Controllers\PatientsController@addPatient');
     Route::post('/edit_patient', 'App\Http\Controllers\PatientsController@editPatient');
     Route::post('/delete_patient', 'App\Http\Controllers\PatientsController@deletePatient');
     Route::POST('/gettaluk', 'App\Http\Controllers\PatientsController@gettaluk'); 
     Route::POST('/getpanchayath', 'App\Http\Controllers\PatientsController@getpanchayath'); 
+    Route::POST('/getroom', 'App\Http\Controllers\PatientsController@getrooms'); 
+    Route::POST('/getbed', 'App\Http\Controllers\PatientsController@getbeds'); 
 
     Route::get('/blocks', 'App\Http\Controllers\BlocksController@manageBlocks');
     Route::post('/add_block', 'App\Http\Controllers\BlocksController@addBlock');

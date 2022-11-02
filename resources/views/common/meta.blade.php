@@ -33,7 +33,7 @@
   <link rel="stylesheet" href="{!! asset('plugins/select2/css/select2.min.css') !!}">
   <link rel="stylesheet" href="{!! asset('plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') !!}">
   <link rel="stylesheet" href="{!! asset('dist/css/style.css') !!}">
-
+<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" rel="stylesheet"/>
 </head>
 
 <style>

@@ -730,10 +730,11 @@ text-align: center;
                                        <label for="dob" class="col-sm-4 col-form-label"><span style="color:red"></span>
                                        Date Of Birth</label>
                                        <div class="col-sm-6">
-                                        <input type="date" class="form-control" name="dob" id="bday" onchange="submitBday()">
+                                       <input  required="required" type="text" class="form-control" name="dob" id="dob" maxlength="50" placeholder="Date of Birth">
                                      </div>
-                                     <div class="col-sm-2">
-                                       <input class="form-control" id="resultBday">
+
+                                       <div class="col-sm-2">
+                                          <input  required="required" type="nimber" class="form-control" id="age" name="age"  placeholder="Auto "></input>
                                     </div>
                                  </div>
                                  <div class="form-group row">
@@ -1046,4 +1047,5 @@ clearphoto();
 window.addEventListener('load', startup, false);
 })();
 </script>
+
 

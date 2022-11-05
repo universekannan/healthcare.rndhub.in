@@ -103,7 +103,7 @@ public function addPatient(Request $request){
     $adduser = DB::table('patients')->insert([
         'profile_status'     =>   $request->profile_status,
         'full_name'          =>   $request->full_name,
-        'dob'               =>   $request->dob,
+        'dob'                =>   $request->dob,
         'gender'             =>   $request->gender,
         'age'                =>   $request->age,
         'relation_name'      =>   $request->relation_name,
@@ -119,8 +119,9 @@ public function addPatient(Request $request){
         'company'            =>   $request->company,
         'employe_id'         =>   $request->employe_id,
         'other_details'      =>   $request->other_details,
-        'user_types_id'            =>   $request->user_types_id,
+        'user_types_id'      =>   $request->user_types_id,
         'disease_id'         =>   $request->disease_id,
+        'doctor_id'         =>   $request->doctor_id,
         'status'             =>   $request->status,
         'created_at'         =>   date('Y-m-d H:i:s'),
     ]);
@@ -129,8 +130,9 @@ public function addPatient(Request $request){
 }
 
 public function editPatient(Request $request){
-
+    $editpatient->doctor_id = json_encode(doctor_id);
     $editpatient = DB::table('patients')->where('id',$request->id)->update([
+
         'profile_status'     =>   $request->profile_status,
         'full_name'          =>   $request->full_name,
         'year'               =>   $request->year,

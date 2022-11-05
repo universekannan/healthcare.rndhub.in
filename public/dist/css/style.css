@@ -129,7 +129,7 @@ label {
 
 
 
-input[type='text'] {
+input, select[type='text'] {
     color: green;
     border: 1px solid lightblack;
     font-weight: bold;
@@ -139,7 +139,7 @@ input[type='text'] {
     font-size: 11px;
 }
 
-input[type=text] {
+input, select[type=text] {
     border: 2px solid #c5cbfc;
     border-radius: 6px;
     vertical-align: middle;
@@ -168,7 +168,7 @@ input[type=text] {
     transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
     transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
 }
-input {
+input, select {
     font-weight: bold;
 }
 button, input, select, textarea {
@@ -176,6 +176,6 @@ button, input, select, textarea {
     font-size: inherit;
     line-height: inherit;
 }
-input {
+input, select {
     line-height: normal;
 }

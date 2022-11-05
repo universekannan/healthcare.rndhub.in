@@ -100,8 +100,8 @@
                   <input value="{{ $manageuserslist->email }}"type="email" class="form-control mb-3" name="email" placeholder="Enter Email"/>
                           <div class="form-group">
   <select name="gender" class="form-control">
-                                            <option value="Mail" <?php if($manageuserslist->gender == 1){ echo "selected"; }?>>Mail</option>
-                                            <option value="Femail" <?php if($manageuserslist->gender == 0){ echo "selected"; }?>>Femail</option>
+                                            <option value="Male" <?php if($manageuserslist->gender == 1){ echo "selected"; }?>>Male</option>
+                                            <option value="Female" <?php if($manageuserslist->gender == 0){ echo "selected"; }?>>Female</option>
                                         </select>
                                         </div>
                                         <div class="form-group">
@@ -175,8 +175,8 @@
                   </select>
                    <select class="form-control mb-3" name="gender">
                     <option>Select Gender</option>
-                    <option value="Mail">Mail</option>
-                    <option value="Fmail">Femail</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
                   </select>
                 </div>
                 <div class="col-md-6">   

@@ -16,6 +16,21 @@ td, th {
 tr:nth-child(even) {
   background-color: #dddddd;
 }
+.row-padded {
+        background-color: #F7F7F7;
+        padding: 1px;
+        margin: 4px;
+        border: 1px solid #DDD;
+        height: 25px;
+    }
+
+    .row-color {
+        background-color: greenyellow;
+        padding: 1px;
+        margin: 4px;
+        border: 1px solid #DDD;
+        height: 25px;
+    }
 </style>
 
 <div class="content-wrapper">
@@ -103,220 +118,410 @@ tr:nth-child(even) {
    <input type="hidden" class="form-control" name="user_id" value="{{ $manageuserslist->user_id }}"/>
 
          <div class="card card-success ">
-            <div class="card-body ">	
-			   <label class="col-sm-2">1</label>
-			   <label class="col-sm-8">Dashboard</label>
-			@if($manageuserslist->dashboard == 1)
-			   <label class="col-sm-1"><input value="1" type="checkbox" name="dashboard" id="dashboard" checked></label>
-            @else
-			   <label class="col-sm-1"><input value="1" type="checkbox" name="dashboard" id="dashboard"></label>
-            @endif
-						
-			   <label class="col-sm-2">2</label>
-			   <label class="col-sm-8">Roles</label>
-			@if($manageuserslist->roles == 1)
-			   <label class="col-sm-1"><input value="1" type="checkbox" name="roles" id="roles" checked></label>
-            @else
-			   <label class="col-sm-1"><input value="1" type="checkbox" name="roles" id="roles"></label>
-            @endif
-			
-			   <label class="col-sm-2">3</label>
-			   <label class="col-sm-8">Add Role</label>
-			@if($manageuserslist->addrole == 1)
-			   <label class="col-sm-1"><input value="1" type="checkbox" name="addrole" id="addrole" checked></label>
-            @else
-			   <label class="col-sm-1"><input value="1" type="checkbox" name="addrole" id="addrole"></label>
-            @endif
+            <div class="card-body ">
 
-			   <label class="col-sm-2">4</label>
-			   <label class="col-sm-8">Edit Role</label>
-			@if($manageuserslist->editrole == 1)
-			   <label class="col-sm-1"><input value="1" type="checkbox" name="editrole" id="editrole" checked></label>
-            @else
-			   <label class="col-sm-1"><input value="1" type="checkbox" name="editrole" id="editrole"></label>
-            @endif
+             <div class="row row-color">
+            		<label class="col-sm-4">Dashboard</label>
+            	</div>
 
-			   <label class="col-sm-2">5</label>
-			   <label class="col-sm-8">Delete Role</label>
-			@if($manageuserslist->deleterole == 1)
-			   <label class="col-sm-1"><input value="1" type="checkbox" name="deleterole" id="deleterole" checked></label>
-            @else
-			   <label class="col-sm-1"><input value="1" type="checkbox" name="deleterole" id="deleterole"></label>
-            @endif
+            	<div class="row row-padded">
+            		<label for="dashboard" class="col-sm-2">1</label>
+            		<label for="dashboard" class="col-sm-8">Dashboard</label>
+            		<div class="icheck-success d-inline">
+            			@if($manageuserslist->dashboard == 1)
+            			<label class="col-sm-1"><input value="1" type="checkbox" name="dashboard" id="dashboard" checked></label>
+            			@else
+            			<label class="col-sm-1"><input value="1" type="checkbox" name="dashboard" id="dashboard"></label>
+            			@endif
+            		</div> 
+            	</div>
+               
+               <div class="row row-color">
+            		<label class="col-sm-4">Roles</label>
+            	</div>
 
-			   <label class="col-sm-2">6</label>
-			   <label class="col-sm-8">Users</label>
-			@if($manageuserslist->users == 1)
-			   <label class="col-sm-1"><input value="1" type="checkbox" name="users" id="users" checked></label>
-            @else
-			   <label class="col-sm-1"><input value="1" type="checkbox" name="users" id="users"></label>
-            @endif
+            	<div class="row row-padded">
+            		<label for="roles" class="col-sm-2">2</label>
+            		<label for="roles" class="col-sm-8">Roles</label>
+            		<div class="icheck-success d-inline">
+            			@if($manageuserslist->roles == 1)
+            			<label class="col-sm-1"><input value="1" type="checkbox" name="roles" id="roles" checked></label>
+            			@else
+            			<label class="col-sm-1"><input value="1" type="checkbox" name="roles" id="roles"></label>
+            			@endif
+            		</div> 
+            	</div>
 
-			   <label class="col-sm-2">7</label>
-			   <label class="col-sm-8">Add User</label>
-			@if($manageuserslist->adduser == 1)
-			   <label class="col-sm-1"><input value="1" type="checkbox" name="adduser" id="adduser" checked></label>
-            @else
-			   <label class="col-sm-1"><input value="1" type="checkbox" name="adduser" id="adduser"></label>
-            @endif
+            	<div class="row row-padded">
+            		<label for="addrole" class="col-sm-2">3</label>
+            		<label for="addrole" class="col-sm-8">Add Role</label>
+            		<div class="icheck-success d-inline">
+            			@if($manageuserslist->addrole == 1)
+            			<label class="col-sm-1"><input value="1" type="checkbox" name="addrole" id="addrole" checked></label>
+            			@else
+            			<label class="col-sm-1"><input value="1" type="checkbox" name="addrole" id="addrole"></label>
+            			@endif
+            		</div> 
+            	</div>
 
-			   <label class="col-sm-2">8</label>
-			   <label class="col-sm-8">Edit User</label>
-			@if($manageuserslist->edituser == 1)
-			   <label class="col-sm-1"><input value="1" type="checkbox" name="edituser" id="edituser" checked></label>
-            @else
-			   <label class="col-sm-1"><input value="1" type="checkbox" name="edituser" id="edituser"></label>
-            @endif
-			
-			   <label class="col-sm-2">9</label>
-			   <label class="col-sm-8">Delete User</label>
-			@if($manageuserslist->deleteuser == 1)
-			   <label class="col-sm-1"><input value="1" type="checkbox" name="deleteuser" id="deleteuser" checked></label>
-            @else
-			   <label class="col-sm-1"><input value="1" type="checkbox" name="deleteuser" id="deleteuser"></label>
-            @endif
-			
-			   <label class="col-sm-2">10</label>
-			   <label class="col-sm-8">Patients</label>
-			@if($manageuserslist->patients == 1)
-			   <label class="col-sm-1"><input value="1" type="checkbox" name="patients" id="patients" checked></label>
-            @else
-			   <label class="col-sm-1"><input value="1" type="checkbox" name="patients" id="patients"></label>
-            @endif
-			   <label class="col-sm-2">11</label>
-			   <label class="col-sm-8">Add Patient</label>
-			@if($manageuserslist->addpatient == 1)
-			   <label class="col-sm-1"><input value="1" type="checkbox" name="addpatient" id="addpatient" checked></label>
-            @else
-			   <label class="col-sm-1"><input value="1" type="checkbox" name="addpatient" id="addpatient"></label>
-            @endif
-			   <label class="col-sm-2">12</label>
-			   <label class="col-sm-8">Edit Patient</label>
-			@if($manageuserslist->editpatient == 1)
-			   <label class="col-sm-1"><input value="1" type="checkbox" name="editpatient" id="editpatient" checked></label>
-            @else
-			   <label class="col-sm-1"><input value="1" type="checkbox" name="editpatient" id="editpatient"></label>
-            @endif
-			   <label class="col-sm-2">13</label>
-			   <label class="col-sm-8">Delete Patient</label>
-			@if($manageuserslist->deletepatient == 1)
-			   <label class="col-sm-1"><input value="1" type="checkbox" name="deletepatient" id="deletepatient" checked></label>
-            @else
-			   <label class="col-sm-1"><input value="1" type="checkbox" name="deletepatient" id="deletepatient"></label>
-            @endif
-			   <label class="col-sm-2">14</label>
-			   <label class="col-sm-8">Blocks</label>
-			@if($manageuserslist->blocks == 1)
-			   <label class="col-sm-1"><input value="1" type="checkbox" name="blocks" id="blocks" checked></label>
-            @else
-			   <label class="col-sm-1"><input value="1" type="checkbox" name="blocks" id="blocks"></label>
-            @endif
-			   <label class="col-sm-2">15</label>
-			   <label class="col-sm-8">Add Block</label>
-			@if($manageuserslist->addblock == 1)
-			   <label class="col-sm-1"><input value="1" type="checkbox" name="addblock" id="addblock" checked></label>
-            @else
-			   <label class="col-sm-1"><input value="1" type="checkbox" name="addblock" id="addblock"></label>
-            @endif
-			   <label class="col-sm-2">16</label>
-			   <label class="col-sm-8">Edit Block</label>
-			@if($manageuserslist->editblock == 1)
-			   <label class="col-sm-1"><input value="1" type="checkbox" name="editblock" id="editblock" checked></label>
-            @else
-			   <label class="col-sm-1"><input value="1" type="checkbox" name="editblock" id="editblock"></label>
-            @endif
+            	<div class="row row-padded">
+            		<label for="editrole" class="col-sm-2">4</label>
+            		<label for="editrole" class="col-sm-8">Edit Role</label>
+            		<div class="icheck-success d-inline">
+            			@if($manageuserslist->editrole == 1)
+            			<label class="col-sm-1"><input value="1" type="checkbox" name="editrole" id="editrole" checked></label>
+            			@else
+            			<label class="col-sm-1"><input value="1" type="checkbox" name="editrole" id="editrole"></label>
+            			@endif
+            		</div> 
+            	</div>
+
+            	<div class="row row-padded">
+            		<label for="deleterole" class="col-sm-2">5</label>
+            		<label for="deleterole" class="col-sm-8">Delete Role</label>
+            		<div class="icheck-success d-inline">
+            			@if($manageuserslist->deleterole == 1)
+            			<label class="col-sm-1"><input value="1" type="checkbox" name="deleterole" id="deleterole" checked></label>
+            			@else
+            			<label class="col-sm-1"><input value="1" type="checkbox" name="deleterole" id="deleterole"></label>
+            			@endif
+            		</div> 
+            	</div>
+                
+                <div class="row row-color">
+            		<label class="col-sm-4">Users</label>
+            	</div>
+
+            	<div class="row row-padded">
+            		<label for="users" class="col-sm-2">6</label>
+            		<label for="users" class="col-sm-8">Users</label>
+            		<div class="icheck-success d-inline">
+            			@if($manageuserslist->users == 1)
+            			<label class="col-sm-1"><input value="1" type="checkbox" name="users" id="users" checked></label>
+            			@else
+            			<label class="col-sm-1"><input value="1" type="checkbox" name="users" id="users"></label>
+            			@endif
+            		</div> 
+            	</div>
+
+            	<div class="row row-padded">
+            		<label for="adduser" class="col-sm-2">7</label>
+            		<label for="adduser" class="col-sm-8">Add User</label>
+            		<div class="icheck-success d-inline">
+            			@if($manageuserslist->adduser == 1)
+            			<label class="col-sm-1"><input value="1" type="checkbox" name="adduser" id="adduser" checked></label>
+            			@else
+            			<label class="col-sm-1"><input value="1" type="checkbox" name="adduser" id="adduser"></label>
+            			@endif
+            		</div> 
+            	</div>
+
+            	<div class="row row-padded">
+            		<label for="edituser" class="col-sm-2">8</label>
+            		<label for="edituser" class="col-sm-8">Edit User</label>
+            		<div class="icheck-success d-inline">
+            			@if($manageuserslist->edituser == 1)
+            			<label class="col-sm-1"><input value="1" type="checkbox" name="edituser" id="edituser" checked></label>
+            			@else
+            			<label class="col-sm-1"><input value="1" type="checkbox" name="edituser" id="edituser"></label>
+            			@endif
+            		</div> 
+            	</div>
+
+            	<div class="row row-padded">
+            		<label for="deleteuser" class="col-sm-2">9</label>
+            		<label for="deleteuser" class="col-sm-8">Delete User</label>
+            		<div class="icheck-success d-inline">
+            			@if($manageuserslist->deleteuser == 1)
+            			<label class="col-sm-1"><input value="1" type="checkbox" name="deleteuser" id="deleteuser" checked></label>
+            			@else
+            			<label class="col-sm-1"><input value="1" type="checkbox" name="deleteuser" id="deleteuser"></label>
+            			@endif
+            		</div> 
+            	</div>
+               
+               <div class="row row-color">
+            		<label class="col-sm-4">Patients</label>
+            	</div>
+
+            	<div class="row row-padded">
+            		<label for="patients" class="col-sm-2">10</label>
+            		<label for="patients" class="col-sm-8">Patients</label>
+            		<div class="icheck-success d-inline">
+            			@if($manageuserslist->patients == 1)
+            			<label class="col-sm-1"><input value="1" type="checkbox" name="patients" id="patients" checked></label>
+            			@else
+            			<label class="col-sm-1"><input value="1" type="checkbox" name="patients" id="patients"></label>
+            			@endif
+            		</div> 
+            	</div>
+
+            	<div class="row row-padded">
+            		<label class="col-sm-2">11</label>
+            		<label class="col-sm-8">Add Patient</label>
+            		<div class="icheck-success d-inline">
+            			@if($manageuserslist->addpatient == 1)
+            			<label class="col-sm-1"><input value="1" type="checkbox" name="addpatient" id="addpatient" checked></label>
+            			@else
+            			<label class="col-sm-1"><input value="1" type="checkbox" name="addpatient" id="addpatient"></label>
+            			@endif
+            		</div> 
+            	</div>
+
+            	<div class="row row-padded">
+            		<label class="col-sm-2">12</label>
+            		<label class="col-sm-8">Edit Patient</label>
+            		<div class="icheck-success d-inline">
+            			@if($manageuserslist->editpatient == 1)
+            			<label class="col-sm-1"><input value="1" type="checkbox" name="editpatient" id="editpatient" checked></label>
+            			@else
+            			<label class="col-sm-1"><input value="1" type="checkbox" name="editpatient" id="editpatient"></label>
+            			@endif
+            		</div> 
+            	</div>
+
+            	<div class="row row-padded">
+            		<label class="col-sm-2">13</label>
+            		<label class="col-sm-8">Delete Patient</label>
+            		<div class="icheck-success d-inline">
+            			@if($manageuserslist->deletepatient == 1)
+            			<label class="col-sm-1"><input value="1" type="checkbox" name="deletepatient" id="deletepatient" checked></label>
+            			@else
+            			<label class="col-sm-1"><input value="1" type="checkbox" name="deletepatient" id="deletepatient"></label>
+            			@endif
+            		</div> 
+            	</div>
+                
+                <div class="row row-color">
+            		<label class="col-sm-4">Blocks</label>
+            	</div>
+
+            	<div class="row row-padded">
+            		<label class="col-sm-2">14</label>
+            		<label class="col-sm-8">Blocks</label>
+            		<div class="icheck-success d-inline">
+            			@if($manageuserslist->blocks == 1)
+            			<label class="col-sm-1"><input value="1" type="checkbox" name="blocks" id="blocks" checked></label>
+            			@else
+            			<label class="col-sm-1"><input value="1" type="checkbox" name="blocks" id="blocks"></label>
+            			@endif
+            		</div> 
+            	</div>
+
+            	<div class="row row-padded">
+            		<label class="col-sm-2">15</label>
+            		<label class="col-sm-8">Add Block</label>
+            		<div class="icheck-success d-inline">
+            			@if($manageuserslist->addblock == 1)
+            			<label class="col-sm-1"><input value="1" type="checkbox" name="addblock" id="addblock" checked></label>
+            			@else
+            			<label class="col-sm-1"><input value="1" type="checkbox" name="addblock" id="addblock"></label>
+            			@endif
+            		</div> 
+            	</div>
+
+            	<div class="row row-padded">
+            		<label class="col-sm-2">16</label>
+            		<label class="col-sm-8">Edit Block</label>
+            		<div class="icheck-success d-inline">
+            			@if($manageuserslist->editblock == 1)
+            			<label class="col-sm-1"><input value="1" type="checkbox" name="editblock" id="editblock" checked></label>
+            			@else
+            			<label class="col-sm-1"><input value="1" type="checkbox" name="editblock" id="editblock"></label>
+            			@endif
+            		</div> 
+            	</div>
+			   
+			   <div class="row row-padded">
 			   <label class="col-sm-2">17</label>
 			   <label class="col-sm-8">Delete Block</label>
+			   <div class="icheck-success d-inline">
 			@if($manageuserslist->deleteblock == 1)
 			   <label class="col-sm-1"><input value="1" type="checkbox" name="deleteblock" id="deleteblock" checked></label>
             @else
 			   <label class="col-sm-1"><input value="1" type="checkbox" name="deleteblock" id="deleteblock"></label>
             @endif
+          </div>
+        </div>
+            
+            <div class="row row-color">
+            		<label class="col-sm-4">Rooms</label>
+            	</div>
+
+          <div class="row row-padded">
 			   <label class="col-sm-2">18</label>
 			   <label class="col-sm-8">Rooms</label>
+			   <div class="icheck-success d-inline">
 			@if($manageuserslist->rooms == 1)
 			   <label class="col-sm-1"><input value="1" type="checkbox" name="rooms" id="rooms" checked></label>
             @else
 			   <label class="col-sm-1"><input value="1" type="checkbox" name="rooms" id="rooms"></label>
             @endif
+           </div>
+         </div>
+
+           <div class="row row-padded">
 			   <label class="col-sm-2">19</label>
 			   <label class="col-sm-8">Add Room</label>
+			   <div class="icheck-success d-inline">
 			@if($manageuserslist->addroom == 1)
 			   <label class="col-sm-1"><input value="1" type="checkbox" name="addroom" id="addroom" checked></label>
             @else
 			   <label class="col-sm-1"><input value="1" type="checkbox" name="addroom" id="addroom"></label>
             @endif
+          </div>
+        </div>
+
+        <div class="row row-padded">
 			   <label class="col-sm-2">20</label>
 			   <label class="col-sm-8">Edit Room</label>
+			   <div class="icheck-success d-inline">
 			@if($manageuserslist->editroom == 1)
 			   <label class="col-sm-1"><input value="1" type="checkbox" name="editroom" id="editroom" checked></label>
             @else
 			   <label class="col-sm-1"><input value="1" type="checkbox" name="editroom" id="editroom"></label>
             @endif
-			
+          </div>
+        </div>
+
+			<div class="row row-padded">
 			<label class="col-sm-2">21</label>
 			   <label class="col-sm-8">Delete Room</label>
+			   <div class="icheck-success d-inline">
 			@if($manageuserslist->deleteroom == 1)
 			   <label class="col-sm-1"><input value="1" type="checkbox" name="deleteroom" id="deleteroom" checked></label>
             @else
 			   <label class="col-sm-1"><input value="1" type="checkbox" name="deleteroom" id="deleteroom"></label>
             @endif
-			<label class="col-sm-2">21</label>
+          </div>
+        </div> 
+
+        <div class="row row-color">
+            		<label class="col-sm-4">Admission</label>
+            	</div>
+
+          <div class="row row-padded">
+			<label class="col-sm-2">22</label>
 			   <label class="col-sm-8">Admission</label>
+			   <div class="icheck-success d-inline">
 			@if($manageuserslist->admission == 1)
 			   <label class="col-sm-1"><input value="1" type="checkbox" name="admission" id="admission" checked></label>
             @else
 			   <label class="col-sm-1"><input value="1" type="checkbox" name="admission" id="admission"></label>
             @endif
-			<label class="col-sm-2">21</label>
+          </div>
+        </div>
+
+        <div class="row row-color">
+            		<label class="col-sm-4">Billing</label>
+            	</div>
+
+          <div class="row row-padded">
+			<label class="col-sm-2">23</label>
 			   <label class="col-sm-8">Billing</label>
+			   <div class="icheck-success d-inline">
 			@if($manageuserslist->billing == 1)
 			   <label class="col-sm-1"><input value="1" type="checkbox" name="billing" id="billing" checked></label>
             @else
 			   <label class="col-sm-1"><input value="1" type="checkbox" name="billing" id="billing"></label>
             @endif
-			<label class="col-sm-2">21</label>
+          </div>
+        </div>
+        
+        <div class="row row-color">
+            		<label class="col-sm-4">Pharmacy</label>
+            	</div>
+
+      <div class="row row-padded">
+			<label class="col-sm-2">24</label>
 			   <label class="col-sm-8">Pharmacy</label>
+			   <div class="icheck-success d-inline">
 			@if($manageuserslist->pharmacy == 1)
 			   <label class="col-sm-1"><input value="1" type="checkbox" name="pharmacy" id="pharmacy" checked></label>
             @else
 			   <label class="col-sm-1"><input value="1" type="checkbox" name="pharmacy" id="pharmacy"></label>
             @endif
-			<label class="col-sm-2">21</label>
+          </div>
+        </div>
+
+        <div class="row row-color">
+            		<label class="col-sm-4">Investigation</label>
+            	</div>
+
+        <div class="row row-padded">
+			<label class="col-sm-2">25</label>
 			   <label class="col-sm-8">Investigation</label>
+			    <div class="icheck-success d-inline">
 			@if($manageuserslist->investigation == 1)
 			   <label class="col-sm-1"><input value="1" type="checkbox" name="investigation" id="investigation" checked></label>
             @else
 			   <label class="col-sm-1"><input value="1" type="checkbox" name="investigation" id="investigation"></label>
             @endif
-			<label class="col-sm-2">21</label>
+          </div>
+          </div>
+
+          <div class="row row-color">
+            		<label class="col-sm-4">OT</label>
+            	</div>
+
+          <div class="row row-padded">
+			<label class="col-sm-2">26</label>
 			   <label class="col-sm-8">OT</label>
+			    <div class="icheck-success d-inline">
 			@if($manageuserslist->ot == 1)
 			   <label class="col-sm-1"><input value="1" type="checkbox" name="ot" id="ot" checked></label>
             @else
 			   <label class="col-sm-1"><input value="1" type="checkbox" name="ot" id="ot"></label>
             @endif
-			<label class="col-sm-2">21</label>
+          </div>
+        </div>
+
+        <div class="row row-color">
+            		<label class="col-sm-4">MRD</label>
+            	</div>
+
+          <div class="row row-padded">
+			<label class="col-sm-2">27</label>
 			   <label class="col-sm-8">MRD</label>
+			    <div class="icheck-success d-inline">
 			@if($manageuserslist->mrd == 1)
 			   <label class="col-sm-1"><input value="1" type="checkbox" name="mrd" id="mrd" checked></label>
             @else
 			   <label class="col-sm-1"><input value="1" type="checkbox" name="mrd" id="mrd"></label>
             @endif
-			<label class="col-sm-2">21</label>
+          </div>
+        </div>
+
+        <div class="row row-color">
+            		<label class="col-sm-4">Appointments</label>
+            	</div>
+
+          <div class="row row-padded">
+			<label class="col-sm-2">28</label>
 			   <label class="col-sm-8">Appointments</label>
+			    <div class="icheck-success d-inline">
 			@if($manageuserslist->appointments == 1)
 			   <label class="col-sm-1"><input value="1" type="checkbox" name="appointments" id="appointments" checked></label>
             @else
 			   <label class="col-sm-1"><input value="1" type="checkbox" name="appointments" id="appointments"></label>
             @endif
-			<label class="col-sm-2">21</label>
+          </div>
+        </div>
+               <div class="row row-color">
+            		<label class="col-sm-4">MIS</label>
+            	</div>
+
+          <div class="row row-padded">
+			<label class="col-sm-2">29</label>
 			   <label class="col-sm-8">MIS</label>
+			    <div class="icheck-success d-inline">
 			@if($manageuserslist->mis == 1)
 			   <label class="col-sm-1"><input value="1" type="checkbox" name="mis" id="mis" checked></label>
             @else
 			   <label class="col-sm-1"><input value="1" type="checkbox" name="mis" id="mis"></label>
             @endif
+          </div>
+        </div>
 			
             </div>
          </div>

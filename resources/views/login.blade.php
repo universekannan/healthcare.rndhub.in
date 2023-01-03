@@ -21,18 +21,18 @@
       <form action="{{url('/checkLogin')}}" method="post" enctype="multipart/form-data"> 
       {{ csrf_field() }}
         <div class="input-group mb-3">
-          <input type="email" name="email" class="form-control" placeholder="Email" required>
+          <input type="email" name="email" class="form-control" style="height: 30px" placeholder="Email" required>
           <div class="input-group-append">
             <div class="input-group-text">
-              <span class="fas fa-envelope"></span>
+              <span class="fas fa-envelope fa-xs"></span>
             </div>
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="password"  name="password" class="form-control" placeholder="Password" required>
+          <input type="password"  name="password" class="form-control" style="height: 30px" placeholder="Password" required>
           <div class="input-group-append">
             <div class="input-group-text">
-              <span class="fas fa-lock"></span>
+              <span class="fas fa-lock fa-xs"></span>
             </div>
           </div>
         </div>

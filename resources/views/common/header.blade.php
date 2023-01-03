@@ -83,7 +83,7 @@ legend {
   <a href="{{url('/users/permissions')}}">Permissions</a>
   </div>
 @else
-  <a href="{{url('/doctorpatient')}}">Patients</a>
+  <a href="{{url('/patients')}}">Patients</a>
 @endif
 </div>
 </li>

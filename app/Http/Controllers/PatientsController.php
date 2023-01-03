@@ -34,10 +34,12 @@ class PatientsController extends BaseController
 
     /******   Manage Users  Start ******/
     public function managePatients(){
-
-     $manageoppatients = DB::table('patients')->select('patients.*','patient_disease.*','patients.id as userID')
+      $today = date('Y-m-d');
+     $manageoppatients = DB::table('patients')->select('patients.*','patient_disease.*','appointment.*','patients.id as userID')
      ->Join('patient_disease', 'patient_disease.id', '=', 'patients.disease_id')
-     ->where('patients.user_types_id', '=','4')->where('patients.status', '=','2')->orderBy('patients.id','Asc')->get();
+     ->Join('appointment', 'appointment.patient_id', '=', 'patients.id')
+
+     ->where('patients.user_types_id', '=','4')->where('appointment.appointment_date', '=',$today)->where('patients.status', '=','2')->orderBy('patients.id','Asc')->get();
 
      $manageippatients = DB::table('patients')->select('patients.*','patient_disease.*','patients.id as userID')
      ->Join('patient_disease', 'patient_disease.id', '=', 'patients.disease_id')
@@ -57,9 +59,11 @@ class PatientsController extends BaseController
 
   public function doctorPatients(){
      
-     $manageoppatients = DB::table('patients')->select('patients.*','patient_disease.*','patients.id as userID')
+
+     $manageoppatients = DB::table('patients')->select('patients.*','patient_disease.*','appointment.*','patients.id as userID')
      ->Join('patient_disease', 'patient_disease.id', '=', 'patients.disease_id')
-     ->where('patients.user_types_id', '=','4')->where('patients.status', '=','2')->where('patients.doctor_id', '=',auth()->user()->id)->orderBy('patients.id','Asc')->get();
+     ->Join('appointment', 'appointment.patient_id', '=', 'patients.id')
+     ->where('patients.user_types_id', '=','4')->where('appointment.appointment_date', '=',$today)->where('patients.status', '=','2')->where('patients.doctor_id', '=',auth()->user()->id)->orderBy('patients.id','Asc')->get();
 
      $manageippatients = DB::table('patients')->select('patients.*','patient_disease.*','patients.id as userID')
      ->Join('patient_disease', 'patient_disease.id', '=', 'patients.disease_id')
@@ -100,7 +104,7 @@ public function manageDisease(){
 
 public function addPatient(Request $request){
 
-    $adduser = DB::table('patients')->insert([
+    $adduser = DB::table('patients')->insertGetId([
         'profile_status'     =>   $request->profile_status,
         'full_name'          =>   $request->full_name,
         'dob'                =>   $request->dob,
@@ -121,10 +125,16 @@ public function addPatient(Request $request){
         'other_details'      =>   $request->other_details,
         'user_types_id'      =>   $request->user_types_id,
         'disease_id'         =>   $request->disease_id,
-        'doctor_id'         =>   $request->doctor_id,
+        'doctor_id'          =>   $request->doctor_id,
         'status'             =>   $request->status,
         'created_at'         =>   date('Y-m-d H:i:s'),
     ]);
+    $appointment = DB::table('appointment')->insert([
+        'patient_id'         =>   $adduser,
+        'doctor_id'          =>   $request->doctor_id,
+        'disease_id'          =>   $request->disease_id,
+        'appointment_date'    =>   date('Y-m-d'),
+        ]);
 
     return redirect('/patients')->with('success', 'Patient Added Successfully'); 
 }

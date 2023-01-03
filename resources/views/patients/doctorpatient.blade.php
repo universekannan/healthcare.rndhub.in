@@ -397,7 +397,7 @@ text-align: center;
                   <div class="form-group row">
                      <label for="doctor_id" class="col-sm-4 col-form-label"><span style="color:red"></span>Doctors</label>
                      <div class="col-sm-8">
-                        <select class="select2 form-control" multiple="multiple" data-placeholder="Select Doctor" style="width: 100%;" name="doctor_id[]" id="doctor_id" >
+                        <select class="select2 form-control" multiple="multiple" data-placeholder="Select Doctor" style="width: 100%;" name="doctor_id">
                            @foreach($managedoctor as $key=>$managedoctorlist)
                            <option value="{{ $managedoctorlist->id }}">{{ $managedoctorlist->full_name }}</option>
                            @endforeach

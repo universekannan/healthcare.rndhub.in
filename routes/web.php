@@ -19,7 +19,7 @@ Route::fallback(function () {
     return view("404");
 }); 
 Route::get('/', function () {
-    return view('login');
+    return view('welcome');
 });
 
 

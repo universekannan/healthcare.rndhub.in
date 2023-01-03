@@ -1,0 +1,17 @@
+{
+    "name": "Health Care",
+    "short_name": "HC",
+    "start_url": "/dashboard",
+    "background_color": "#6777ef",
+    "description": "HealthCare",
+    "display": "fullscreen",
+    "theme_color": "#6777ef",
+    "icons": [
+        {
+            "src": "logo.PNG",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ]
+}

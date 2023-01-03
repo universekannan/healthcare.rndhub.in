@@ -54,7 +54,7 @@ class AdminController extends BaseController
                 } if($admin->user_types_id == 2){
                     return redirect()->intended('/dashboard')->with('administrators', $administrators);
                 } else{
-                  return redirect()->intended('/dashboard')->with('administrators', $administrators);
+                  return redirect()->intended('/patients')->with('administrators', $administrators);
                 }
             } else {
                 return redirect('/')->with('loginError','Email or Password is incorrect');

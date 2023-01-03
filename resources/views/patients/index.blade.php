@@ -83,6 +83,7 @@ text-align: center;
 </div>
 @endif
 <div class="tab-content" id="custom-tabs-four-tabContent">
+
 <div class="tab-pane fade show active" id="custom-tabs-four-home" role="tabpanel" aria-labelledby="custom-tabs-four-home-tab">
 <table id="example2" class="table table-bordered table-hover">
    <thead>
@@ -712,6 +713,7 @@ text-align: center;
                                  <div class="col-md-6">
                                     <input type="hidden" class="form-control" name="user_types_id" value="4"/>
                                     <input type="hidden" class="form-control" name="state_id" value="4"/>
+                                   <!--  <input type="hidden" class="form-control" name="age" id="resultBday"/> -->
                                     <div class="form-group row">
                                        <label for="profile_status" class="col-sm-4 col-form-label"><span style="color:red"></span>Patient Name</label>
                                        <div class="col-sm-3 custom-file">
@@ -730,11 +732,10 @@ text-align: center;
                                        <label for="dob" class="col-sm-4 col-form-label"><span style="color:red"></span>
                                        Date Of Birth</label>
                                        <div class="col-sm-6">
-                                       <input  required="required" type="text" class="form-control" name="dob" id="dob" maxlength="50" placeholder="Date of Birth">
+                                        <input type="date" class="form-control" name="dob" id="bday" onchange="submitBday()">
                                      </div>
-
-                                       <div class="col-sm-2">
-                                          <input  required="required" type="nimber" class="form-control" id="age" name="age"  placeholder="Auto "></input>
+                                     <div class="col-sm-2">
+                                      <input type="text" class="form-control" name="age" id="resultBday"/>
                                     </div>
                                  </div>
                                  <div class="form-group row">
@@ -1047,5 +1048,4 @@ clearphoto();
 window.addEventListener('load', startup, false);
 })();
 </script>
-
 

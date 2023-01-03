@@ -120,10 +120,10 @@ form.was-validated select:valid ~ .select2-container--bootstrap4 .select2-select
   .select2-container--bootstrap4 .select2-selection__clear:hover {
     background-color: #afafaf; }
 
-.select2-container--bootstrap4 .select2-selection--single {
-  height: calc(1.5em + 0.75rem + 2px) !important; }
+/*.select2-container--bootstrap4 .select2-selection--single {
+  height: calc(1.5em + 0.75rem + 2px) !important; }*/
   .select2-container--bootstrap4 .select2-selection--single .select2-selection__placeholder {
-    line-height: calc(1.5em + 0.75rem);
+    /*line-height: calc(1.5em + 0.75rem);*/
     color: #6c757d; }
   .select2-container--bootstrap4 .select2-selection--single .select2-selection__arrow {
     position: absolute;

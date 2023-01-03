@@ -520,6 +520,7 @@ input[type=radio],
 input[type=checkbox] {
   box-sizing: border-box;
   padding: 0;
+  display: none;
 }
 
 textarea {
@@ -31738,6 +31739,7 @@ html.maximized-card {
   right: 0;
   text-align: right;
   top: 0;
+  
 }
 
 .text-sm .btn {

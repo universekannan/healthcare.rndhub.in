@@ -159,9 +159,9 @@ function myFunction() {
     })
 
     //Bootstrap Duallistbox
-    $('.duallistbox').bootstrapDualListbox()
+    /*$('.duallistbox').bootstrapDualListbox()*/
 
-    //Colorpicker
+    /*//Colorpicker
     $('.my-colorpicker1').colorpicker()
     //color picker with addon
     $('.my-colorpicker2').colorpicker()
@@ -169,27 +169,27 @@ function myFunction() {
     $('.my-colorpicker2').on('colorpickerChange', function(event) {
       $('.my-colorpicker2 .fa-square').css('color', event.color.toString());
     })
-
+*/
     $("input[data-bootstrap-switch]").each(function(){
       $(this).bootstrapSwitch('state', $(this).prop('checked'));
     })
 
   })
   // BS-Stepper Init
-  document.addEventListener('DOMContentLoaded', function () {
+  /*document.addEventListener('DOMContentLoaded', function () {
     window.stepper = new Stepper(document.querySelector('.bs-stepper'))
-  })
+  })*/
 
   // DropzoneJS Demo Code Start
-  Dropzone.autoDiscover = false
+  //Dropzone.autoDiscover = false
 
   // Get the template HTML and remove it from the doumenthe template HTML and remove it from the doument
-  var previewNode = document.querySelector("#template")
+  /*var previewNode = document.querySelector("#template")
   previewNode.id = ""
   var previewTemplate = previewNode.parentNode.innerHTML
-  previewNode.parentNode.removeChild(previewNode)
+  previewNode.parentNode.removeChild(previewNode)*/
 
-  var myDropzone = new Dropzone(document.body, { // Make the whole body a dropzone
+  /*var myDropzone = new Dropzone(document.body, { // Make the whole body a dropzone
     url: "/target-url", // Set the url
     thumbnailWidth: 80,
     thumbnailHeight: 80,
@@ -230,7 +230,7 @@ function myFunction() {
   }
   document.querySelector("#actions .cancel").onclick = function() {
     myDropzone.removeAllFiles(true)
-  }
+  }*/
   // DropzoneJS Demo Code End
 </script>
 
@@ -4208,45 +4208,14 @@ function duplicateEmail(id){
         });
 </script>
  
-<script>  
-   function ageCalculator() {  
-       var userinput = document.getElementById("DOB").value;  
-       var dob = new Date(userinput);  
-       if(userinput==null || userinput=='') {  
-         document.getElementById("message").innerHTML = "**Choose a date please!";    
-         return false;   
-       } else {  
-         
-       //calculate month difference from current date in time  
-       var month_diff = Date.now() - dob.getTime();  
-         
-       //convert the calculated difference in date format  
-       var age_dt = new Date(month_diff);   
-         
-       //extract year from date      
-       var year = age_dt.getUTCFullYear();  
-         
-       //now calculate the age of the user  
-       var age = Math.abs(year - 1970);  
-         
-       //display the calculated age  
-       return document.getElementById("result").innerHTML =    
-                "" + age + "";  
-       }  
-   }  
-</script>  
-
 <script>
-   $('#dob').datepicker({
-       onSelect: function(value, ui) {
-           var today = new Date(), 
-               age = today.getFullYear() - ui.selectedYear;
-           $('#age').val(age);
-       },
-       maxDate: '+0d',
-       changeMonth: true,
-       changeYear: true,
-        yearRange: '1950:2030',
-   });
+   function submitBday() {
+     var Q4A = "";
+    var Bdate = document.getElementById('bday').value;
+    var Bday = +new Date(Bdate);
+    Q4A +=  + "" + ~~ ((Date.now() - Bday) / (31557600000));
+    var theBday = document.getElementById('resultBday');
+    theBday.value = Q4A;
+}
    
 </script>
